@@ -4,7 +4,7 @@ An auto disposable MobX reactions and stores approach, with auto dependency inje
 
 ### Example
 
-```dart
+```yaml
 # add dependency to pubspec.yaml
 
 mobx_store_disposer:
