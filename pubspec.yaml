@@ -1,0 +1,20 @@
+name: mobx_store_disposer
+description: An auto disposable MobX reactions and stores approach, with auto dependency injection. (Reactions can be managed by different State Widgets in widget tree)
+version: 0.0.1
+author: Emanuel Braz (fastencoding@gmail.com)
+homepage: https://github.com/emanuel-braz/mobx_store_disposer.git
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  mobx: ^1.0.2
+  get_it: ^4.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
