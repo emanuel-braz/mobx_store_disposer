@@ -5,6 +5,13 @@ An auto disposable MobX reactions and stores approach, with auto dependency inje
 ### Example
 
 ```dart
+# add dependency to pubspec.yaml
+
+mobx_store_disposer:
+    git: https://github.com/emanuel-braz/mobx_store_disposer.git
+```
+
+```dart
 // Enable lib debug print
 StoreDisposer.debugMode = true;
 ```
@@ -12,7 +19,7 @@ StoreDisposer.debugMode = true;
 ```dart
 // store_a.dart
 
-import 'package:mobx_store_manager/mobx_store_manager.dart';
+import 'package:mobx_store_disposer/mobx_store_disposer.dart';
 
 part 'store_a.g.dart';
 
