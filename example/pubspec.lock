@@ -308,9 +308,11 @@ packages:
   mobx_store_disposer:
     dependency: "direct main"
     description:
-      path: ".."
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: acc6e5b492600e16c96492705db5e77c683af611
+      url: "https://github.com/emanuel-braz/mobx_store_disposer.git"
+    source: git
     version: "0.0.1"
   node_interop:
     dependency: transitive
