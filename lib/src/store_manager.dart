@@ -15,7 +15,7 @@ class StoreManager<T extends StatefulWidget> extends State<T> implements IReacti
   @override
   void initState() {
     super.initState();
-    init(context, this);
+    registerStore(context, this);
   }
 
   String addWidgetReaction({@required ReactionDisposer Function(BuildContext) builder, String name, bool forceUpdate = false, State currentState}){
@@ -94,8 +94,8 @@ class StoreManager<T extends StatefulWidget> extends State<T> implements IReacti
   void disposeReactions() => _reactionList.forEach((reactionDisposable) => reactionDisposable.dispose());
   void disposeStores() => _storeList.forEach((store) => StoreInject().unregister(store, name: store.instanceName));
   
-  void init(BuildContext context, StoreManager<T> state){
-    throw FlutterError('Please override initStoreAndReactions(context, state) method in ${this.runtimeType.toString()}');
+  void registerStore(BuildContext context, StoreManager<T> state){
+    throw FlutterError('Please override registerStore(context, state) method in ${this.runtimeType.toString()}');
   }
 
   @override

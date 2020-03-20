@@ -19,10 +19,10 @@ class _BasicExamplePageState extends StoreManager<BasicExamplePage> {
 
   /// REQUIRED: Init Stores and Reactions to State [StoreManager]
   @override
-  void init(BuildContext context, State state) {
+  void registerStore(BuildContext context, State state) {
     
     // Init Store 
-    storeA = StoreA()..init<StoreA>(context, state);
+    storeA = StoreA()..register<StoreA>(context, state);
 
     // Added some reactions to StoreManager takes care
     this..addWidgetReaction(
@@ -49,7 +49,7 @@ class _BasicExamplePageState extends StoreManager<BasicExamplePage> {
     // Another Store to be used in children Widgets via DI
     // As the store was initiated inside this state, the store got a reference of State
     // so it can addWidgetReation directly in StoreB
-    StoreB()..init<StoreB>(context, state)
+    StoreB()..register<StoreB>(context, state)
     ..addWidgetReaction(
       name: 'StoreB_NAMED_REACTION',
       builder: (context) => autorun(

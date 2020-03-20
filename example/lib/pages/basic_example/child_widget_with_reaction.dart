@@ -15,7 +15,7 @@ class _ChildWidgetWithReactionState
   StoreA storeA;
 
   @override
-  void init(BuildContext context, StoreManager<ChildWidgetWithReaction> state) {
+  void registerStore(BuildContext context, StoreManager<ChildWidgetWithReaction> state) {
     /// Get Store from parent widget via DI
     storeA = StoreInject().get<StoreA>();
 

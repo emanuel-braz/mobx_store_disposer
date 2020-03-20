@@ -32,9 +32,9 @@ mixin StoreDisposer <T extends StoreManager> implements IReactionMethods {
   T state;
   
   @mustCallSuper
-  void init<I>(BuildContext context, T state, {bool autoInject, String name}) {
+  void register<I>(BuildContext context, T state, {bool autoInject, String name}) {
 
-    if (I == dynamic) throw 'Please inform the Store Type: init<[STORE_TYPE]>(context, state);';
+    if (I == dynamic) throw 'Please inform the Store Type: register<[STORE_TYPE]>(context, state);';
     
     this.state = state;
     this.instanceName = name;

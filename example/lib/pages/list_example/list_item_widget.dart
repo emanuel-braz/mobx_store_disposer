@@ -18,8 +18,8 @@ class ListItemWidgetState extends StoreManager<ListItemWidget> {
   ListItemStore store;
 
   @override
-  void init(BuildContext context, StoreManager<ListItemWidget> state) {
-    store = ListItemStore()..init<ListItemStore>(context, state, name: widget.instanceName);
+  void registerStore(BuildContext context, StoreManager<ListItemWidget> state) {
+    store = ListItemStore()..register<ListItemStore>(context, state, name: widget.instanceName);
   }
 
   @override
