@@ -14,11 +14,13 @@ class StoreInject {
     if (name != null) try {exists = GetIt.I.get(instanceName: name) != null;} catch(e){} 
     else try {exists = GetIt.I.get<T>() != null;} catch(e){}
 
-    throwIf(exists == true, 
-    'Error: Already exists an instance of [$T] - Can\'t register a new instance with same type already registered.\n'
-    ' -> If you need multiple instances of the same type, you can try to name them with a unique instanceName.\n'
-    'Eg. super.register<T>(context, state, name: "YOUR_UNIQUE_STORE_IDENTIFIER");\n'
-    );
+    if (exists == true){
+      String error = 'Error: Already exists an instance of [$T] - Can\'t register a new instance with same type already registered.\n'
+      ' -> If you need multiple instances of the same type, you can try to name them with a unique instanceName.\n'
+      'Eg. super.register<T>(context, state, name: "YOUR_UNIQUE_STORE_IDENTIFIER");\n';
+      print('\x1B[31m[ERROR] ==>> \x1B[0m $error');
+      return; 
+    }
 
     if (name != null)
       try{GetIt.I.registerSingleton(instance, instanceName: name);} catch(e){ print('Error: Fail to register DI. You should override register<I>(...) method of ${(instance as dynamic).runtimeType} class, in order to avoid unexpected behavior');}
